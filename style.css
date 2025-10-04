@@ -4,7 +4,7 @@
 }
 
 body{
-    font-family: "Martian Mono", monospace;
+     font-family: "Cherry Bomb One", system-ui;
     background-image: url('PLAYING\ SCREEN.jpg');
     background-size: cover;
 }
@@ -15,9 +15,32 @@ h1 {
    text-shadow: 2px 2px 5px rgba(114, 32, 46, 0.663);    
    font-size: 50px;
    margin: 50px;
+   font-weight: normal;
+   letter-spacing: 2px;
 }
 
 img {
     width: 100%;
-
+    display: block;
 }
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px dashed rgb(235, 128, 146);
+    background-color: pink;
+    color: rgb(81, 30, 39);
+     font-family: "Cherry Bomb One", system-ui;
+     transition: .5s;
+     display: block;
+     margin: auto;
+     margin-top: 20px ;
+}
+
+button:hover {
+    /* cursor: ; */
+    border: 3px dashed rgb(184, 82, 99);
+}
+
+
+/* FIND A PICTURE OF A PLAY BUTTON (Triangle one) */
