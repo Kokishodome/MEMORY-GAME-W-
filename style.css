@@ -43,7 +43,7 @@ button:hover {
 }
 
 #game {
-    position: absolute;
+    position: fixed;
     z-index: 6767676767676767676767676767676767676767;
     top: 0;
     background-color: rgb(255, 247, 0);
@@ -51,6 +51,12 @@ button:hover {
     background-size: cover;
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0%;
+    /* So the tag doesn't see the cursor */
+    pointer-events: none;
+    transition: 0.7s;
 }
 
 #images img {
@@ -58,10 +64,15 @@ button:hover {
     height: 150px;
     display: inline-block;
     object-fit: contain;
+    background-color: rgb(253, 171, 184);
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: solid rgb(250, 138, 157);
 }
 
 #images {
-    width: 300px;
+    width: 450px;
     /* we put 'font size 0' to not have any gaps between the images */
     font-size: 0;
     margin: auto;
@@ -76,10 +87,22 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 }
 
 #triangleButton {
     width: 670px;
+    transition: 0.2s;
 }
 
-/* if touched play button, in Java script (conslose log) write 'play' */
+#images #cat1,
+#images #cat4 {
+    display: block;
+    margin: auto;
+}
+
+#cat2 {
+    margin-right: 150px;
+}
+
+ 
