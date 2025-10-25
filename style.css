@@ -3,6 +3,14 @@
     margin: 0;
 }
 
+::-moz-selection {
+  background: transparent;
+}
+
+::selection {
+  background: transparent;
+}
+
 body {
     font-family: "Cherry Bomb One", system-ui;
     background-image: url('PLAYING\ SCREEN.jpg');
@@ -60,6 +68,7 @@ button:hover {
 }
 
 #images img {
+
     width: 150px;
     height: 150px;
     display: inline-block;
@@ -69,6 +78,7 @@ button:hover {
     box-sizing: border-box;
     border-radius: 100px;
     border: solid rgb(250, 138, 157);
+    transition: 0.3s;
 }
 
 #images {
@@ -103,6 +113,17 @@ button:hover {
 
 #cat2 {
     margin-right: 150px;
+}
+
+h2 {
+    display: flex;
+    color: rgb(120, 31, 47);
+    background-color: rgb(255, 255, 255);
+    padding: 10px 40px;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
 }
 
  
