@@ -3,7 +3,7 @@ let gameOver = document.getElementById('gameOver')
 let triangleButton = document.getElementById('triangleButton')
 let playNow = document.getElementById('playNow')
 let game = document.getElementById('game')
-// array 4
+// array 
 let pattern = []
 let isPlayNow = false
 let isPlayButton = true
@@ -18,17 +18,29 @@ function startLevel() {
     counter = 0
 }
 
-playButton.onclick = function () {
+function animateCat() {
+    let animationCounter = 0
     // cat animation
-    setTimeout(() => {
+    let catAnimation = setTimeout(function catTimeout() {
 
-        cats[pattern[0]].style.transform = 'scaleX(0)'
+        cats[pattern[animationCounter]].style.transform = 'scaleX(0)'
         setTimeout(() => {
-            cats[pattern[0]].style.transform = 'scaleX(1)'
+            cats[pattern[animationCounter]].style.transform = 'scaleX(1)'
+            setTimeout(() => {
+
+                animationCounter++
+                if (animationCounter < pattern.length) {
+                    catAnimation = setTimeout(catTimeout, 300)
+                }
+            }, 300);
 
         }, 300);
-    }, 1000);
+    }, 300);
+}
 
+playButton.onclick = function () {
+
+    animateCat()
     // traingle animation
     triangleButton.style.transform = 'scale(0.9)'
     setTimeout(function () {
@@ -59,9 +71,10 @@ for (let i = 0; i < 4; i = i + 1) {
             counter++
             if (counter == pattern.length) {
                 startLevel()
+                animateCat()
                 console.log('level+1');
                 level.innerHTML = '2'
-                
+
             }
 
         }
@@ -76,6 +89,8 @@ for (let i = 0; i < 4; i = i + 1) {
 
 
 }
+
+
 
 
 
