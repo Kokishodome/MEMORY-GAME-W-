@@ -10,6 +10,7 @@ let isPlayButton = true
 let cats = document.getElementsByClassName('cats')
 let level = document.getElementById('level')
 let counter = 0
+let levelCounter = 1
 
 function startLevel() {
     let catRandom = Math.floor(Math.random() * 4)
@@ -40,7 +41,6 @@ function animateCat() {
 
 playButton.onclick = function () {
 
-    animateCat()
     // traingle animation
     triangleButton.style.transform = 'scale(0.9)'
     setTimeout(function () {
@@ -48,7 +48,11 @@ playButton.onclick = function () {
     }, 200)
     setTimeout(function () {
         playButton.style.transform = 'translateX(100%)'
+        pattern = []
+        levelCounter = 1
+        level.innerHTML = levelCounter
         startLevel()
+        animateCat()
     }, 400)
 }
 
@@ -71,10 +75,12 @@ for (let i = 0; i < 4; i = i + 1) {
             counter++
             if (counter == pattern.length) {
                 startLevel()
-                animateCat()
+                levelCounter++
+                setTimeout(() => {
+                    animateCat()
+                }, 500);
                 console.log('level+1');
-                level.innerHTML = '2'
-
+                level.innerHTML = levelCounter
             }
 
         }
