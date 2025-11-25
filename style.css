@@ -46,13 +46,11 @@ button {
 }
 
 button:hover {
-    /* cursor: ; */
     border: 3px dashed rgb(184, 82, 99);
 }
 
 #game {
     position: fixed;
-    /* z-index: 6767676767676767676767676767676767676767; */
     top: 0;
     background-image: url('PLAYING\ SCREEN.jpg');
     background-size: cover;
@@ -76,15 +74,19 @@ button:hover {
     padding: 30px;
     box-sizing: border-box;
     border-radius: 100px;
-    border: solid rgb(250, 138, 157);
+    border: 2px solid rgb(250, 138, 157);
     transition: 0.3s;
 }
 
 #images {
     width: 450px;
-    /* we put 'font size 0' to not have any gaps between the images */
+    /* we put 'font size 0' to not have any gaps between the images */  
     font-size: 0;
     margin: auto;
+}
+
+#images img:hover {
+    cursor: pointer;
 }
 
 #playButton {

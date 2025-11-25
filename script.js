@@ -19,7 +19,11 @@ function startLevel() {
     counter = 0
 }
 
+// pattern [2,1,0,3]
+
 function animateCat() {
+    // the animationCounter resets to 0 every new level so the game knows how many cats you have to remember each time ie. 
+    // [0] [0,1] [0,1,2]
     let animationCounter = 0
     // cat animation
     let catAnimation = setTimeout(function catTimeout() {
@@ -28,9 +32,11 @@ function animateCat() {
         setTimeout(() => {
             cats[pattern[animationCounter]].style.transform = 'scaleX(1)'
             setTimeout(() => {
-
+            //    the animation counter increases by 1 each time so we select the next cat from the pattern
                 animationCounter++
+                // when the animationCounter increases by 1, the code checks if it is less than the pattern. If it is true then the cat turns, if it is false, it doesn't.
                 if (animationCounter < pattern.length) {
+                    // restart the cat animation, so that the cat animation works for every cat in the pattern
                     catAnimation = setTimeout(catTimeout, 300)
                 }
             }, 300);
@@ -79,14 +85,12 @@ for (let i = 0; i < 4; i = i + 1) {
                 setTimeout(() => {
                     animateCat()
                 }, 500);
-                console.log('level+1');
                 level.innerHTML = levelCounter
             }
 
         }
 
         else {
-            console.log('gameOver');
             playButton.style.transform = 'translateX(0%)'
             gameOver.style.opacity = '1'
         }
